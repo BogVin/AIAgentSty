@@ -29,7 +29,7 @@ class AgentState(TypedDict):
 all_tools = [clone_repo_tool, list_files_tool, read_files_tool, write_files_tool]
 
 llm = init_chat_model(
-    model="gemini-2.0-pro",  # or "gemini-2.0-flash"
+    model="google_genai:gemini-2.0-flash", 
     temperature=0,
     project=os.environ.get("GOOGLE_CLOUD_PROJECT_ID")
 ).bind_tools(all_tools)
