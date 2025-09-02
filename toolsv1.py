@@ -68,7 +68,10 @@ def write_files_tool(files: Dict[str, str], base_path: str) -> str:
     return f"Successfully wrote {len(files)} files to {base_path}"
 
 @tool
-def verify_python_code(files: Dict[str, str]) -> Dict[str, str]:
+def verify_python_code_tool(files: Dict[str, str]) -> Dict[str, str]:
+    """
+    Check python code for syntax error
+    """
     from ast import parse, SyntaxError
     results = {}
     for path, code in files.items():
